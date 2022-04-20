@@ -17,7 +17,7 @@ import com.google_ml_kit.vision.BarcodeDetector;
 //import com.google_ml_kit.vision.ObjectDetector;
 //import com.google_ml_kit.vision.CustomRemoteModelManager;
 //import com.google_ml_kit.vision.PoseDetector;
-//import com.google_ml_kit.vision.TextDetector;
+import com.google_ml_kit.vision.TextDetector;
 //import com.google_ml_kit.vision.TextDetectorV2;
 
 import java.util.ArrayList;
@@ -36,7 +36,8 @@ public class MlKitMethodCallHandler implements MethodChannel.MethodCallHandler {
     public MlKitMethodCallHandler(Context context) {
         List<ApiDetectorInterface> detectors = new ArrayList<ApiDetectorInterface>(
                 Arrays.asList(
-                        new BarcodeDetector(context)
+                        new BarcodeDetector(context),
+                        new TextDetector(context)
                 ));
 
         handlers = new HashMap<>();

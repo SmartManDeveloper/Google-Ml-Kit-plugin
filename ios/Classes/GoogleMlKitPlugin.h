@@ -10,6 +10,7 @@
 + (MLKVisionImage *)visionImageFromData:(NSDictionary *)imageData;
 @end
 
+
 @protocol Handler
 @required
 - (NSArray*)getMethodsKeys;
@@ -18,6 +19,9 @@
 @end
 
 @interface BarcodeScanner : NSObject <Handler>
+@end
+
+@interface TextRecognizer : NSObject <Handler>
 @end
 
 static FlutterError *getFlutterError(NSError *error) {
